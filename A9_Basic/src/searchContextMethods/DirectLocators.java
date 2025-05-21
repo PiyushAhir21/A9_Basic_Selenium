@@ -16,14 +16,18 @@ public class DirectLocators {
 		
 		Thread.sleep(1000);
 		
+		int a = 123;
+		System.out.println(a);
+		
+		Object obj = new Object();
+		System.out.println(obj);
 		
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		System.out.println(links.size());
 		
 //		<a> link text </a> => getText() => visible text(String)
-		for (WebElement iterator : links) {
-			String text = iterator.getText();
-			System.out.println(text);
+		for (WebElement i : links) {
+			System.out.println(i.getText());
 		}
 		
 		
