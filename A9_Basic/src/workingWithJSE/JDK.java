@@ -8,21 +8,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Facebook {
+public class JDK {
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-		driver.get("https://www.facebook.com/r.php?entry_point=login");
-
-		String gender = "Male";
-
-		WebElement custom = driver.findElement(By.id("custom_gender"));
-		custom.sendKeys(gender);
-
+		
+		driver.get("https://www.oracle.com/java/technologies/javase-jdk23-doc-downloads.html");
+		
+		driver.findElement(By.linkText("jdk-23.0.2_doc-all.zip")).click();
+		
+		WebElement desire = driver.findElement(By.linkText("Download jdk-23.0.2_doc-all.zip"));
+		
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].value='Male';", custom, gender);
-
+		jse.executeScript("arguments[0].click();", desire);
 	}
 }
